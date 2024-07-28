@@ -24,6 +24,20 @@ class UserRepository implements IUserRepository {
             throw error;
         }
     }
+
+    public async findUserByEmail(email: string) {
+        try {
+            const user = await UsersModel.findOne({
+                where: {
+                    email: email
+                }
+            });
+    
+            return user;
+        } catch (error) {
+            throw error;
+        }
+    }
 }
 
 export default UserRepository;
