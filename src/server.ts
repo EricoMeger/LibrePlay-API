@@ -2,9 +2,11 @@ import {Request, Response} from "express";
 import express from "express";
 import UserRegisterController from "./controller/UserRegisterController";
 import UserLoginController from "./controller/UserLoginController";
+import MovieSearchController from "./controller/MovieSearchController";
 
 const userRegisterController = new UserRegisterController()
 const userLoginController = new UserLoginController()
+const movieSearchController = new MovieSearchController()
 
 const app = express()
 app.use(express.json())
@@ -32,6 +34,21 @@ app.post('/login/usuario', async (req: Request, res: Response) => {
     try {
         let data = req.body
         let result = await userLoginController.loginUser(data)
+
+        if(result.sucess){
+            res.status(200).send(result)
+        } else {
+            res.status(400).send(result)
+        }
+    } catch (error){
+        res.status(500).send(error)
+    }
+});
+
+app.post('/buscar/filme', async (req: Request, res: Response) => {
+    try {
+        let data = req.body
+        let result = await movieSearchController.searchDatabase(data)
 
         if(result.sucess){
             res.status(200).send(result)

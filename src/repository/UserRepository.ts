@@ -1,6 +1,6 @@
 import { UserRegisterDTO } from '../dto/UserRegisterDTO';
 import UsersModel from '../model/UsersModel';
-import IUserRepository from './interface/IUserRepository';
+import { IUserRepository } from './interface/IUserRepository';
 
 class UserRepository implements IUserRepository {
     public async createUser(userData: UserRegisterDTO) {
