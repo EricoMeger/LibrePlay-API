@@ -16,6 +16,6 @@ export interface MovieDTO {
 }
 
 
-export interface DatabaseSearchDTO {
+export interface MovieSearchDTO {
     filme: MovieDTO;
 }
