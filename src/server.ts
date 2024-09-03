@@ -7,8 +7,11 @@ import MovieSearchController from "./controller/MovieSearchController";
 const userRegisterController = new UserRegisterController()
 const userLoginController = new UserLoginController()
 const movieSearchController = new MovieSearchController()
+const cors = require('cors');
 
 const app = express()
+
+app.use(cors())
 app.use(express.json())
 
 app.get('/status', (req: Request, res: Response) => {
