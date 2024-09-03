@@ -190,7 +190,7 @@ Exemplo de erro:
 }
 ```
 
-O exemplo acima mostra todas as possibilidades de campos para pesquisa, mas todos esses campos são opcionais.
+O exemplo acima mostra todas as possibilidades de campos para pesquisa, mas todos esses campos são opcionais. Por exemplo, é possível fazer uma pesquisa com base somente no título do filme:
 
 ```json
 {
