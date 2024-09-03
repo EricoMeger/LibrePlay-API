@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import app from "./server";
+import app from "./interfaces/http/expressAdapter";
 
 const port = process.env.PORT
 
